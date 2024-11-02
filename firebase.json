@@ -1,0 +1,7 @@
+{
+  "hosting": {
+    "site": "chiemelie-firebase-js-app",
+    "public": "public",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+  }
+}

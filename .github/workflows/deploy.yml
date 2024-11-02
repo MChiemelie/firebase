@@ -27,7 +27,7 @@ jobs:
         run: npx tailwindcss -i ./public/styles/index.css -o ./public/styles/main.css --minify
 
       - name: Install Firebase CLI
-        run: npm install -g firebase-tools
+        run: npm install -g firebase-tools  # This installs the Firebase CLI globally
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4

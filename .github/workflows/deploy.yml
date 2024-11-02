@@ -20,8 +20,8 @@ jobs:
       - name: Install dependencies
         run: npm install  # Use npm or yarn based on your project
 
-      - name: Build the project
-        run: npm run build  # Adjust this to your actual build command
+      - name: Build Tailwind CSS
+        run: npx tailwindcss -i ./src/input.css -o ./dist/output.css --minify  # Adjust paths as necessary
 
       - name: Copy index.html to root
         run: cp public/index.html .  # Ensure you have the correct path to your index.html
@@ -29,5 +29,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }} # How do I get this token?
-          publish_dir: .  /public/index.html # This is where your built files are located
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .  # Adjust this to your actual publish directory

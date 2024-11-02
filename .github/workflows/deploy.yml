@@ -5,9 +5,12 @@ on:
     branches:
       - main  # Change this to your main branch if different
 
+permissions:
+  contents: write
+
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -27,7 +30,8 @@ jobs:
         run: cp public/index.html .  # Ensure you have the correct path to your index.html
 
       - name: Deploy to GitHub Pages
-        uses: actions/github-pages@v1
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: public 
+          publish_dir: public  # Adjust to the correct path where your built files are located
+

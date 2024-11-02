@@ -5,9 +5,6 @@ on:
     branches:
       - main  # Change this to your main branch if different
 
-permissions:
-  contents: write  # Allow write access to the repository contents
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -21,16 +18,16 @@ jobs:
           node-version: '14'  # Adjust based on your project's Node.js version
 
       - name: Install dependencies
-        run: npm install  # Use npm or yarn based on your project
+        run: npm install
 
       - name: Build Tailwind CSS
         run: npx tailwindcss -i ./public/styles/index.css -o ./public/styles/main.css --minify
 
       - name: Copy index.html to root
-        run: cp public/index.html .  # Ensure you have the correct path to your index.html
+        run: cp public/index.html .
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: github/pages-action@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}  # This token should have permissions
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: .  # Adjust this to your actual publish directory

@@ -18,16 +18,16 @@ jobs:
           node-version: '14'  # Adjust based on your project's Node.js version
 
       - name: Install dependencies
-        run: npm install
+        run: npm install  # Use npm or yarn based on your project
 
       - name: Build Tailwind CSS
         run: npx tailwindcss -i ./public/styles/index.css -o ./public/styles/main.css --minify
 
       - name: Copy index.html to root
-        run: cp public/index.html .
+        run: cp public/index.html .  # Ensure you have the correct path to your index.html
 
       - name: Deploy to GitHub Pages
-        uses: github/pages-action@v1
+        uses: actions/github-pages@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .  # Adjust this to your actual publish directory
+          publish_dir: public 

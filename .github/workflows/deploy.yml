@@ -33,5 +33,10 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: public  # Adjust to the correct path where your built files are located
+          publish_dir: .  # Adjusted to point to the root where index.html is located
 
+      - name: Deploy to Firebase
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        run: |
+          firebase deploy --token $FIREBASE_TOKEN

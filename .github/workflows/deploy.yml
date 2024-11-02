@@ -21,7 +21,7 @@ jobs:
         run: npm install  # Use npm or yarn based on your project
 
       - name: Build Tailwind CSS
-        run: npx tailwindcss -i ./public/index.css -o ./public/main.css --minify
+        run: npx tailwindcss -i ./public/styles/index.css -o ./public/styles/main.css --minify
 
       - name: Copy index.html to root
         run: cp public/index.html .  # Ensure you have the correct path to your index.html

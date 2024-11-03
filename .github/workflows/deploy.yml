@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages and Firebase
 on:
   push:
     branches:
-      - main  # Change this to your main branch if different
+      - main  # Adjust to your main branch if needed
 
 permissions:
   contents: write
@@ -18,10 +18,10 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '18'  # Updated to Node.js version 18 for compatibility with Firebase CLI
+          node-version: '18'  # Node.js version for compatibility with Firebase CLI
 
       - name: Install dependencies
-        run: npm install  # Use npm or yarn based on your project
+        run: npm install  # Install dependencies using npm
 
       - name: Build Tailwind CSS
         run: npx tailwindcss -i ./public/styles/index.css -o ./public/styles/main.css --minify
@@ -29,11 +29,22 @@ jobs:
       - name: Install Firebase CLI
         run: npm install -g firebase-tools  # Install Firebase CLI globally
 
+      - name: Check Firebase login
+        run: |
+          if ! firebase projects:list --token ${{ secrets.FIREBASE_TOKEN }}; then
+            echo "Error: Unable to verify Firebase login. Please check the token."
+            exit 1
+          fi
+
+      - name: Initialize Firebase (optional)
+        run: |
+          firebase init hosting --token ${{ secrets.FIREBASE_TOKEN }} --non-interactive || echo "Firebase already initialized"
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: public  # Adjust to the correct path where your built files are located
+          publish_dir: public 
 
       - name: Deploy to Firebase
         env:

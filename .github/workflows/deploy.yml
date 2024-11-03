@@ -31,7 +31,7 @@ jobs:
 
       - name: Check Firebase login
         run: |
-          if ! firebase projects:list --token ${{ secrets.FIREBASE_TOKEN }}; then
+          if ! firebase projects:list --token "${{ secrets.FIREBASE_TOKEN }}"; then
             echo "Error: Unable to verify Firebase login. Please check the token."
             exit 1
           fi

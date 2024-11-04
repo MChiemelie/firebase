@@ -554,8 +554,42 @@ video {
   display: none;
 }
 
-.block {
-  display: block;
+.flex {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.border {
+  border-width: 1px;
+}
+
+.bg-slate-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.p-5 {
+  padding: 1.25rem;
+}
+
+.p-\[1\.75\%\] {
+  padding: 1.75%;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .py-5 {
@@ -563,8 +597,26 @@ video {
   padding-bottom: 1.25rem;
 }
 
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .text-center {
   text-align: center;
+}
+
+.font-alata {
+  font-family: Alata, sans-serif;
+}
+
+.font-fredoka {
+  font-family: Fredoka, sans-serif;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .text-3xl {
@@ -572,9 +624,9 @@ video {
   line-height: 2.25rem;
 }
 
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
 .text-5xl {
@@ -582,24 +634,158 @@ video {
   line-height: 1;
 }
 
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
 }
 
 .font-bold {
   font-weight: 700;
 }
 
-.uppercase {
-  text-transform: uppercase;
+.font-extrabold {
+  font-weight: 800;
 }
 
-.text-red-800 {
-  --tw-text-opacity: 1;
-  color: rgb(153 27 27 / var(--tw-text-opacity));
+.font-medium {
+  font-weight: 500;
 }
 
-.underline {
-  text-decoration-line: underline;
+.leading-9 {
+  line-height: 2.25rem;
+}
+
+.leading-relaxed {
+  line-height: 1.625;
+}
+
+.leading-snug {
+  line-height: 1.375;
+}
+
+.leading-tight {
+  line-height: 1.25;
+}
+
+.leading-loose {
+  line-height: 2;
+}
+
+.leading-normal {
+  line-height: 1.5;
+}
+
+.leading-10 {
+  line-height: 2.5rem;
+}
+
+.leading-\[\] {
+  line-height: ;
+}
+
+.leading-\[10\] {
+  line-height: 10;
+}
+
+.leading-\[10r\] {
+  line-height: 10r;
+}
+
+.leading-\[10re\] {
+  line-height: 10re;
+}
+
+.leading-\[10rem\] {
+  line-height: 10rem;
+}
+
+.leading-\[1rem\] {
+  line-height: 1rem;
+}
+
+.leading-\[rem\] {
+  line-height: rem;
+}
+
+.leading-\[4rem\] {
+  line-height: 4rem;
+}
+
+.leading-\[3rem\] {
+  line-height: 3rem;
+}
+
+.leading-\[3\.rem\] {
+  line-height: 3.rem;
+}
+
+.leading-\[3\.5rem\] {
+  line-height: 3.5rem;
+}
+
+/* Import Google Fonts */
+
+body {
+  font-family: 'Alata', sans-serif;
+  /* Use Alata font */
+}
+
+h1 {
+  font-family: 'Afacad Flux', sans-serif;
+  /* Use Afacad Flux font */
+}
+
+p {
+  font-family: 'Fredoka', sans-serif;
+  /* Use Fredoka font */
+}
+
+footer {
+  font-family: 'Lilita One', sans-serif;
+  /* Use Lilita One font */
+}
+
+.fancy-border {
+  position: relative;
+  margin: 0 auto;
+  border-radius: 58% 42% 42% 58% / 39% 39% 61% 61%;
+  background: linear-gradient(155deg, #ebd39d, #8cf5f3);
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.fancy-border img {
+  width: 85%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: auto 1rem;
+}
+
+@media (min-width: 640px) {
+  .sm\:flex {
+    display: flex;
+  }
 }

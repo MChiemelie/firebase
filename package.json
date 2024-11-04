@@ -7,6 +7,7 @@
   "description": "Firebase Sandbox",
   "main": "index.js",
   "scripts": {
+    "start": "lite-server --no-notify",
     "build": "npx tailwindcss -i ./public/styles/index.css -o ./public/styles/main.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

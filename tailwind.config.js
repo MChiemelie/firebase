@@ -1,8 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./public/**/*.{html,js}"],
+  mode: 'jit',
+  content: ['./public/index.html'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        alata: ['Alata', 'sans-serif'],
+        'afacad-flux': ['Afacad Flux', 'sans-serif'],
+        fredoka: ['Fredoka', 'sans-serif'],
+        candal: ['candal', 'sans-serif']
+      }
+    }
   },
-  plugins: [],
+  plugins: []
 };
